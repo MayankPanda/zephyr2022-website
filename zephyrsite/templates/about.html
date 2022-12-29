@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,24 +11,29 @@
         * {
             box-sizing: border-box;
         }
+
         body {
             background-image: url("{% static 'About bg.jpg' %}");
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
         }
+
         .navbar .left {
             padding: 10px 20px;
         }
+
         .logo {
             margin: 0 0 0 1rem;
             height: 12vh;
         }
-        .navbar .right{
+
+        .navbar .right {
             color: white;
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
@@ -35,36 +41,42 @@
             align-items: center;
             margin: 0 1.5rem 0 0;
         }
+
         a {
             border: 2px solid white;
             border-radius: 25px;
             color: azure;
             text-decoration: none;
-            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0, 0, 151, 0.52));
             padding: 7px 15px;
             margin: 0 2rem;
         }
+
         .content .left {
             width: 50%;
             display: flex;
             justify-content: center;
             float: left;
         }
+
         .illustration {
             height: 65vh;
             margin: 4rem 0 0 1rem;
             align-self: center;
         }
+
         .content .right {
             float: right;
             width: 48%;
         }
+
         .content .right .box1 {
             margin: 7rem 0 0 0;
             color: white;
             font-size: 25px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
+
         .content .right .box2 {
             margin: -2rem 0 0 0;
             color: white;
@@ -72,12 +84,14 @@
             font-family: Arial, Helvetica, sans-serif;
             line-height: 10%;
         }
+
         .content .right .box3 {
             margin: -1rem 0 0 -2rem;
             color: white;
             font-size: 33px;
             font-family: Arial, sans-serif;
         }
+
         .content .right .box4 {
             margin: 2rem 4.5rem 0 0;
             display: flex;
@@ -86,22 +100,25 @@
             font-size: 22.5px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
+
         .social {
             display: flex;
             align-items: center;
         }
+
         .fb {
             margin: 0.5rem 0 0 0;
             padding: 5px;
             height: 5vh;
         }
+
         .insta {
             margin: 0.5rem 0 0 0;
             padding: 5px;
             height: 5vh;
         }
-        .central-content
-        {
+
+        .central-content {
             height: 79vh;
             /* background-color: aqua; */
             margin-top: -10vh;
@@ -114,32 +131,50 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 2rem;
         }
-        #hero-img
-        {
+
+        #hero-img {
             height: 95%;
             width: 70%;
         }
-        #hero-content
-        {
+
+        #hero-content {
             margin-top: -5vh;
         }
-        .lower-content
-        {
+
+        .lower-content {
             height: 20vh;
             width: 40vw;
-            background-color: aqua;
-            margin-top: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* background-color: aqua; */
+            margin-top: 35vh;
+            color:white;
+            margin-left: 5vw;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        .upper-content
-        {
+
+        .upper-content {
             height: 40vh;
-            width: 60vw;
-            margin-top: -15vh;
-            margin-left: 20vw;
-            background-color: red;
+            width: 62vw;
+            margin-top: -16vh;
+            margin-left: 35vw;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.7rem;
+        }
+        #content-title
+        {
+            font-size: 3.2rem;
+            transform: translateY(3vh);
+        }
+        #content-body
+        {
+            font-size: 1.2rem;
+            transform: translateY(-6vh);
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
@@ -151,11 +186,22 @@
     </div>
     <!-- Content -->
     <div class="upper-content">
-        
+        <p>Zephyr become an annual workshop on Aerospace Education and Research at IIT Bombay. It aims to provide a
+            platform for students, scientists, professors and the industry to come together, showcase their work and
+            exchange ideas. A national platform for the confluence of aerospace students, enthusiasts, astronauts and
+            companies. It caters to the layman who is fascinated by flying crafts as to the expert who makes fascinating
+            crafts. With challenging competitions, interactive workshops, glamorous and informative exhibitions,
+            fascinating airshows, panel debates and the coolest lectures by the role models in the field of Aerospace
+            and Aviation. Guest lectures, panel debates, exhibitions. Zephyr has it all!</p>
     </div>
     <div class="lower-content">
-        <div id="content-title"><p>ABOUT ZEPHYR</p></div>
-        <div id="content-body"><p>Annual Aviation Fest of IIT Bombay organised by The Aerospace Engineering Association</p></div>
+        <div id="content-title">
+            <p>ABOUT ZEPHYR</p>
+        </div>
+        <div id="content-body">
+            <p>Annual Aviation Fest of IIT Bombay organised by The Aerospace Engineering Association</p>
+        </div>
     </div>
 </body>
+
 </html>
