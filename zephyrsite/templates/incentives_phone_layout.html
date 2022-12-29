@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #incentives-phone
+        {
+            display: flex;
+            background-color: brown;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .inc
+        {
+            width: 90%;
+            left: 5%;
+            height: 20vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: aqua;
+        }
+        .inc-image-holder
+        {
+            height: 100%;
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: green;
+        }
+        .inc-image
+        {
+            width: 90%;
+            height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div id="incentives-phone">
+        <div class="inc">
+            <div class="inc-image-holder">
+                <img src="{% static 'Certificate.png' %}" class="inc-image">
+            </div>
+            <div class="inc-content"></div>
+        </div>
+        <div class="inc">
+            <div class="inc-image-holder">
+                <img src="{% static 'Certificate.png' %}" class="inc-image">
+            </div>
+            <div class="inc-content"></div>
+        </div>
+        <div class="inc">
+            <div class="inc-image-holder">
+                <img src="{% static 'Certificate.png' %}" class="inc-image">
+            </div>
+            <div class="inc-content"></div>
+        </div>
+        <div class="inc">
+            <div class="inc-image-holder">
+                <img src="{% static 'Certificate.png' %}" class="inc-image">
+            </div>
+            <div class="inc-content"></div>
+        </div>
+        <div class="inc">
+            <div class="inc-image-holder">
+                <img src="{% static 'Certificate.png' %}" class="inc-image">
+            </div>
+            <div class="inc-content"></div>
+        </div>
+    </div>
+</body>
+</html>

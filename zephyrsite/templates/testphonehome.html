@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Homepage</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("{% static 'Incentives bg.jpg' %}");
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            padding: 10px 20px;
+        }
+        .logo {
+            margin: 0 0 0 1rem;
+            height: 12vh;
+        }
+        .navbar .right{
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            margin: 0 1.5rem 0 0;
+        }
+        a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .content .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+        .illustration {
+            height: 65vh;
+            margin: 4rem 0 0 1rem;
+            align-self: center;
+        }
+        .content .right {
+            float: right;
+            width: 48%;
+        }
+        .content .right .box1 {
+            margin: 4rem 0 0 0;
+            color: white;
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .content .right .box2 {
+            margin: 1.5rem 0 0 0;
+            color: white;
+            font-size: 85px;
+            height: 48vh;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 10%;
+        }
+        .content .right .box3 {
+            margin: -1rem 0 0 -2rem;
+            color: white;
+            font-size: 33px;
+            font-family: Arial, sans-serif;
+        }
+        .content .right .box4 {
+            margin: 2rem 4.5rem 0 0;
+            display: flex;
+            float: right;
+            color: white;
+            font-size: 22.5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .social {
+            display: flex;
+            align-items: center;
+        }
+        .fb {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        .insta {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        #iconrow1
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #iconrow2
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .row-img
+        {
+            height: 100%;
+            width: 100%;
+        }
+        .headbox
+        {
+            color: white;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .subbox
+        {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 80%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-back {
+  background-color: #210060 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  line-height: 15px;
+  font-size: 0.8rem;
+  transform: rotateY(180deg);
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- <div class="navbar">
+         Zephyr logo
+        <div class="left">
+            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+        </div>
+         menu buttons 
+        <div class="right">
+            <a href="#Home">HOME</a>
+            <a href="#About">ABOUT</a>
+            <a href="#Responsibilities">RESPONSIBILITIES</a>
+            <a href="Incentives">INCENTIVES</a>
+            <a href="FAQ">FAQ</a>
+        </div>
+    </div> -->
+    <!-- Content -->
+    <div class="content">
+        <!-- illustration -->
+        <div class="left">
+            <img class="illustration" src="{% static 'Incentives image.png' %}" alt="illustration">
+        </div>
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <div class="headbox">
+                <p>INCENTIVES</p>
+            </div>
+            <div class="subbox">
+                <p>FOR CAMPUS AMBASSADOR</p>
+            </div>
+            <!-- CA title -->
+            <div class="box2">
+                <div id="iconrow1">
+                    <!-- <img class="row-img" src="{% static 'Certificate.png' %}">
+                    <img class="row-img" src="{% static 'F.png' %}">
+                    <img class="row-img" src="{% static 'Industry.png' %}"> -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Certificate.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Certificate</p>
+                            <p>LinkedIn Recognition</p>
+                            <p>Communication and Management Skills</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'F.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Free Accomodation on Campus</p>
+                            <p>Attend paid workshops for free</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Industry.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Visit top industries for free</p>
+                            <p>Explore the opportunity to interact with professionals</p>
+                            <p>Get exposure of industrial world on your fingertips</p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div id="iconrow2">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'T-shirt.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Get opportunity to be a part of Zephyr's team by getting a free exclusive t-shirt of Zephyr</p>
+                            <p>Explore the opportunity to interact with the team of Zephyr and IITB professors</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Gift.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Win exciting prizes and gifts throughout Zephyr events</p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <!-- Register button -->
+            <div class="box3">
+                <a href="#Register">REGISTER</a>
+            </div>
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <img class="insta" src="{% static 'Ig.png' %}" alt="Instagram">
+                    <img class="fb" src="{% static 'Fb.png' %}" alt="Facebook">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="incentives-phone">
+        <div class="inc">Free</div>
+        <div class="inc">T-shirt</div>
+        <div class="inc">Industry</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Homepage</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("{% static 'Responsibilities bg.jpg' %}");
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            padding: 10px 20px;
+        }
+        .logo {
+            margin: 0 0 0 1rem;
+            height: 12vh;
+        }
+        .navbar .right{
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            margin: 0 1.5rem 0 0;
+        }
+        a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .content .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+        .illustration {
+            height: 65vh;
+            margin: 4rem 0 0 1rem;
+            align-self: center;
+        }
+        .content .right {
+            float: right;
+            width: 48%;
+        }
+        .content .right .box1 {
+            margin: 7rem 0 0 0;
+            color: white;
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .content .right .box2 {
+            margin: 1.5rem 0 0 0;
+            color: white;
+            font-size: 85px;
+            height: 48vh;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 10%;
+        }
+        .content .right .box3 {
+            margin: -1rem 0 0 -2rem;
+            color: white;
+            font-size: 33px;
+            font-family: Arial, sans-serif;
+        }
+        .content .right .box4 {
+            margin: 2rem 4.5rem 0 0;
+            display: flex;
+            float: right;
+            color: white;
+            font-size: 22.5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .social {
+            display: flex;
+            align-items: center;
+        }
+        .fb {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        .insta {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        #iconrow1
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #iconrow2
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .row-img
+        {
+            height: 100%;
+            width: 100%;
+        }
+        .headbox
+        {
+            color: white;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .subbox
+        {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 80%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-back {
+    background-color: #210060 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  line-height: 15px;
+  font-size: 0.8rem;
+  transform: rotateY(180deg);
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Zephyr logo -->
+        <div class="left">
+            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+        </div>
+        <!-- menu buttons -->
+        <div class="right">
+            <a href="#Home">HOME</a>
+            <a href="#About">ABOUT</a>
+            <a href="#Responsibilities">RESPONSIBILITIES</a>
+            <a href="Incentives">INCENTIVES</a>
+            <a href="FAQ">FAQ</a>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="content">
+        <!-- illustration -->
+        <div class="left">
+            <img class="illustration" src="{% static 'Responsibilites image.png' %}" alt="illustration">
+        </div>
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <div class="headbox">
+                <p>RESPONSIBILITIES</p>
+            </div>
+            <div class="subbox">
+                <p>OF CAMPUS AMBASSADOR</p>
+            </div>
+            <!-- CA title -->
+            <div class="box2">
+                <div id="iconrow1">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Publicity.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Create awareness for Zephyr on the campus</p>
+                            <p>Help in Publicity of events under Zephyr</p>
+                            <p>Ensure adequate participation from the campus in Zephyr</p>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Face.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Own your campus by being it's face</p>
+                            <p>Provide regular updates on the campus</p>
+                            <p>Share the database of students willing to participate</p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div id="iconrow2">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{% static 'Ideate.png' %}" class="row-img" alt="Avatar">
+                          </div>
+                          <div class="flip-card-back">
+                            <p>Coordinate with the team and notify students in your college/university about the various activities of Zephyr events</p>
+                            <p>Build excellent raport with college authorities and students on the campus</p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <!-- Register button -->
+            <div class="box3">
+                <a href="#Register">REGISTER</a>
+            </div>
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <img class="insta" src="{% static 'Ig.png' %}" alt="Instagram">
+                    <img class="fb" src="{% static 'Fb.png' %}" alt="Facebook">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

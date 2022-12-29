@@ -2,3 +2,24 @@
 {
     color: green;
 }
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("Reg\ Form\ bg.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+#left
+{
+    width:50vw;
+    height: 60vh;
+    background-color: red;
+}
+#right
+{
+    width:50vw;
+    height: 60vh;
+    background-color: red;
+}

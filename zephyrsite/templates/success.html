@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Homepage</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("{% static 'CA Homepage bg.jpg' %}");
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            padding: 10px 20px;
+        }
+        .logo {
+            margin: 0 0 0 1rem;
+            height: 12vh;
+        }
+        .navbar .right{
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            margin: 0 1.5rem 0 0;
+        }
+        a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .content .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+        .illustration {
+            height: 65vh;
+            margin: 4rem 0 0 1rem;
+            align-self: center;
+        }
+        .content .right {
+            float: right;
+            width: 48%;
+        }
+        .content .right .box1 {
+            margin: 7rem 0 0 0;
+            color: white;
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .content .right .box2 {
+            margin: -2rem 0 0 0;
+            color: white;
+            font-size: 85px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 10%;
+        }
+        .content .right .box3 {
+            margin: -1rem 0 0 -2rem;
+            color: white;
+            font-size: 33px;
+            font-family: Arial, sans-serif;
+        }
+        .content .right .box4 {
+            margin: 2rem 4.5rem 0 0;
+            display: flex;
+            float: right;
+            color: white;
+            font-size: 22.5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .social {
+            display: flex;
+            align-items: center;
+        }
+        .fb {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        .insta {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        .central-content
+        {
+            height: 79vh;
+            /* background-color: aqua; */
+            margin-top: -10vh;
+            width: 80vw;
+            margin-left: 10vw;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+        #hero-img
+        {
+            height: 95%;
+            width: 70%;
+        }
+        #hero-content
+        {
+            margin-top: -5vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Zephyr logo -->
+        <div class="left">
+            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+        </div>
+        <!-- menu buttons -->
+        <div class="right">
+            <a href="#Home">HOME</a>
+            <a href="#About">ABOUT</a>
+            <a href="#Responsibilities">RESPONSIBILITIES</a>
+            <a href="Incentives">INCENTIVES</a>
+            <a href="FAQ">FAQ</a>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="central-content">
+        <img id="hero-img" src="{% static 'Success page image.png' %}">
+        <div id="hero-content">
+            <p>REGISTERED SUCCESSFULLY!</p>
+        </div>
+    </div>
+    <div class="content">
+        <!-- illustration -->
+        
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <img class="insta" src="{% static 'Ig.png' %}" alt="Instagram">
+                    <img class="fb" src="{% static 'Fb.png' %}" alt="Facebook">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
