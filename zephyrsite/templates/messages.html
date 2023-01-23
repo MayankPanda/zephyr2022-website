@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CA Homepage</title>
+  <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+  <title>Register</title>
   <style>
     * {
       box-sizing: border-box;
@@ -17,6 +18,7 @@
       background-repeat: no-repeat;
       position: relative;
       background-size: cover;
+      height: 120vh;
     }
 
     .navbar {
@@ -214,6 +216,125 @@
       font-size: 1.3rem;
       margin-top: -1.3rem;
     }
+    input
+    {
+    border:1px solid white;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 8px;
+    /* background:transparent; */
+    /* color: white; */
+    width: 50%;
+    }
+    select
+    {
+      /* background: transparent;
+      color: white; */
+      width: 15%;
+      height: 4vh;
+      border-radius: 8px;
+      /* transform: translateY(1vh); */
+    }
+    label
+    {
+      display: block;
+      margin-bottom: 2vh;
+      text-transform: uppercase;
+    }
+    /* form
+    {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    } */
+    .mydiv
+    {
+      background-color: red;
+      width: 20vw;
+      height: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .mylabel
+    {
+      text-transform: uppercase;
+    }
+    textarea
+    {
+      /* background: transparent; */
+      width: 70%;
+      resize: none;
+      /* color: white; */
+      border:1px solid white;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 8px;
+    }
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[name="phone_number_1"]
+{
+  width: 35%;
+}
+#reg-btn
+{
+  width:10vw;
+  height: 5vh;
+  color: white;
+  background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0, 0, 151, 0.52));
+  border: 2px white;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 900px) {
+  .illustration
+  {
+    display: none;
+  }
+  .nav-centre
+  {
+    display: none;
+  }
+  .box2
+  {
+    width: 70vw;
+    margin-left: 15vw;
+    transform: translateX(-35vw);
+    /* background-color: red; */
+  }
+  .content .left
+  {
+    display: none;
+  }
+  input
+  {
+    width: 60vw;
+  }
+  #reg-btn
+  {
+    width:30vw;
+  height: 7vh;
+  font-size: 1rem;
+  }
+  textarea
+  {
+    width: 100%;
+  }
+  input[name="phone_number_1"]
+{
+  width: 70%;
+}
+}
   </style>
 </head>
 
@@ -245,12 +366,18 @@
       
       <!-- CA title -->
       <div class="box2">
-        <!-- <form method="POST" class="post-form">  
+        <form method="POST" class="post-form">  
           {% csrf_token %}  
-          {{ form.as_p }}  
-          <button type="submit" class="save btn btn-default">Save</button>  
-      </form>  -->
-      <form method="POST" class="post-form">  
+          <!-- {% for field in form %}
+        <div class="mydiv">
+            <label class="mylabel">{{ field.label }}</label>
+            {{ field }}
+        </div>
+          {% endfor %} -->
+          {{form.as_p}}
+          <button type="submit" id="reg-btn" class="save btn btn-default">SUBMIT</button>  
+      </form> 
+      <!-- <form method="POST" class="post-form">  
         <input type="hidden" name="csrfmiddlewaretoken" value="oosBBngOOTBwmizHSm4hxAYQvQgfzHhvdUDNI9pcyfNKNV2rrFy1d5ELHnQ6n9J9">  
         <p><label for="id_first_name">FIRST NAME</label> <input type="text" name="first_name" maxlength="100" required="" id="id_first_name"></p>
 <p><label for="id_last_name">LAST NAME</label> <input type="text" name="last_name" maxlength="100" required="" id="id_last_name"></p>
@@ -262,7 +389,7 @@
 <p><label for="id_pincode">Pincode:</label> <input type="number" name="pincode" required="" id="id_pincode"></p>
 <p><label for="id_state">State:</label> <input type="text" name="state" maxlength="100" required="" id="id_state"></p>  
         <button type="submit" class="save btn btn-default">Save</button>  
-    </form>
+    </form> -->
       </div>
       <!-- Register button -->
       <!-- <div class="box3">

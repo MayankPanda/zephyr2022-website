@@ -28,6 +28,8 @@ def reg_success(request):
     return render(request,'success.html')
 def about(request):
     return render(request,'about.html')
+def help_page(request):
+    return render(request,'faq.html')
 def home_view(request):
     context ={}
  

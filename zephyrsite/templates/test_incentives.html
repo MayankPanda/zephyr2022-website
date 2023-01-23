@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Homepage</title>
+    <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+    <title>Incentives</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,6 +17,7 @@
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
+            /* height: 100vh; */
         }
         .navbar {
             display: flex;
@@ -23,7 +26,7 @@
         .navbar .left {
             padding: 10px 20px;
         }
-        .logo {
+        .desktop-logo {
             margin: 0 0 0 1rem;
             height: 12vh;
         }
@@ -34,15 +37,6 @@
             display: flex;
             align-items: center;
             margin: 0 1.5rem 0 0;
-        }
-        a {
-            border: 2px solid white;
-            border-radius: 25px;
-            color: azure;
-            text-decoration: none;
-            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
-            padding: 7px 15px;
-            margin: 0 2rem;
         }
         .content .left {
             width: 50%;
@@ -66,7 +60,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .content .right .box2 {
-            margin: 1.5rem 0 0 0;
+            margin: 1rem 0 0 0;
             color: white;
             font-size: 85px;
             height: 48vh;
@@ -74,13 +68,13 @@
             line-height: 10%;
         }
         .content .right .box3 {
-            margin: -1rem 0 0 -2rem;
+            margin: 0 0 0 -2rem;
             color: white;
             font-size: 33px;
             font-family: Arial, sans-serif;
         }
         .content .right .box4 {
-            margin: 2rem 4.5rem 0 0;
+            margin: 1rem 4.5rem 0 0;
             display: flex;
             float: right;
             color: white;
@@ -177,6 +171,199 @@
   font-size: 0.8rem;
   transform: rotateY(180deg);
 }
+.mobile-container {
+      max-width: 900px;
+      margin: auto;
+      /* background-color: #555; */
+      color: white;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      position: relative;
+    }
+
+    .topnav #myLinks {
+      display: none;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 12vh;
+      width: 20vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .active {
+      color: white;
+      height: 12vh;
+    }
+
+    #incentives-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-break
+    {
+      width: 90%;
+      left:5%;
+      height: 5vh;
+    }
+    .inc {
+      width: 90%;
+      left: 5%;
+      height: 20vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* background-color: aqua; */
+    }
+
+    .inc-image-holder {
+      height: 100%;
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-divider
+    {
+      height: 100%;
+      width: 2%;
+    }
+    .inc-image {
+      width: 90%;
+      height: 90%;
+    }
+
+    .logo {
+      height: 90%;
+      width: 20%;
+    }
+
+    #hamburger-icon {
+      transform: scale(1.4);
+      color: white;
+    }
+
+    .inc-content {
+      width: 63%;
+      height: 100%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+    #hero-phone
+{
+  height: 90vh;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly ;
+  /* background-color: aqua; */
+}
+.hero-subbox-phone
+{
+  color: white;
+  font-size: 1.2rem;
+}
+.hero-headbox-phone
+{
+  color: white;
+  font-size: 2rem;
+}
+.hero-image-phone
+{
+  width: 90%;
+  height: 80%;
+}
+#hero-image-sizing-phone
+{
+  width: 100%;
+  height: 100%;
+}
+    @media screen and (max-width: 900px) {
+  .navbar{
+    display: none;
+  }
+  .content
+  {
+    display: none;
+  }
+  .mobile-container
+  {
+    display: block;
+  }
+  #incentives-phone
+  {
+    display: block;
+  }
+  #hero-phone
+{
+  display: flex;
+}
+}
+@media screen and (min-width: 901px) {
+  .navbar{
+    display: flex;
+  }
+  .content
+  {
+    display: block;
+  }
+  .mobile-container
+  {
+    display: none;
+  }
+  #incentives-phone
+  {
+    display: none;
+  }
+  .navbar a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .box3 a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        #hero-phone
+{
+  display: none;
+}
+}
     </style>
 </head>
 <body>
@@ -184,7 +371,7 @@
     <div class="navbar">
         <!-- Zephyr logo -->
         <div class="left">
-            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+            <img class="desktop-logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
         </div>
         <!-- menu buttons -->
         <div class="right">
@@ -192,7 +379,7 @@
           <a href="/zephyr/about">ABOUT</a>
           <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
           <a href="/zephyr/incentives">INCENTIVES</a>
-          <a href="FAQ">FAQ</a>
+          <a href="/zephyr/help">HELP</a>
         </div>
     </div>
     <!-- Content -->
@@ -284,13 +471,121 @@
             <div class="box4">
                 <p>Connect with us</p>
                 <div class="social">
-                    <img class="insta" src="{% static 'Ig.png' %}" alt="Instagram">
-                    <img class="fb" src="{% static 'Fb.png' %}" alt="Facebook">
+                  <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                  <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
                 </div>
                 
             </div>
         </div>
     </div>
-    
+    <div class="mobile-container">
+
+      <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="/zephyr/home" class="active"><img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo"></a>
+        <div id="myLinks">
+          <a href="/zephyr/home">HOME</a>
+          <a href="/zephyr/about">ABOUT</a>
+          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
+          <a href="/zephyr/incentives">INCENTIVES</a>
+          <a href="/zephyr/help">HELP</a>
+          <a href="/zephyr/register">REGISTER</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i id="hamburger-icon" class="fa fa-bars"></i>
+        </a>
+      </div>
+  
+  
+      <!-- End smartphone / tablet look -->
+    </div>
+  
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+    <div id="hero-phone">
+      <div class="hero-heading-phone">
+        <p class="hero-headbox-phone">INCENTIVES</p>
+        <p class="hero-subbox-phone">FOR CAMPUS AMBASSADORS</p>
+      </div>
+      <div class="hero-image-phone">
+        <img id="hero-image-sizing-phone" src="{% static 'Incentives image.png' %}">
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="incentives-phone">
+      <div class="inc">
+        <div class="inc-image-holder">
+          <img src="{% static 'Certificate.png' %}" class="inc-image">
+        </div>
+        <div class="inc-divider"></div>
+        <div class="inc-content">
+          <p>Certificate</p>
+          <p>LinkedIn Recognition</p>
+          <p>Communication and Management Skills</p>
+        </div>
+      </div>
+      <div class="inc-break">
+  
+      </div>
+      <div class="inc">
+        <div class="inc-content">
+          <p>Free Accomodation on Campus</p>
+          <p>Attend paid workshops for free</p>
+        </div>
+        <div class="inc-divider"></div>
+        <div class="inc-image-holder">
+          <img src="{% static 'F.png' %}" class="inc-image">
+        </div>
+      </div>
+      <div class="inc-break">
+  
+      </div>
+      <div class="inc">
+        <div class="inc-image-holder">
+          <img src="{% static 'Industry.png' %}" class="inc-image">
+        </div>
+        <div class="inc-divider"></div>
+        <div class="inc-content">
+          <p>Visit top industries for free</p>
+          <p>Explore the opportunity to interact with professionals</p>
+          <p>Get exposure of industrial world on your fingertips</p>
+        </div>
+      </div>
+      <div class="inc-break">
+  
+      </div>
+      <div class="inc">
+        <div class="inc-content">
+          <p>Get opportunity to be a part of Zephyr's team by getting a free exclusive t-shirt of Zephyr</p>
+          <p>Explore the opportunity to interact with the team of Zephyr and IITB professors</p>
+        </div>
+        <div class="inc-divider"></div>
+        <div class="inc-image-holder">
+          <img src="{% static 'T-shirt.png' %}" class="inc-image">
+        </div>
+      </div>
+      <div class="inc-break">
+  
+      </div>
+      <div class="inc">
+        <div class="inc-image-holder">
+          <img src="{% static 'Gift.png' %}" class="inc-image">
+        </div>
+        <div class="inc-divider"></div>
+        <div class="inc-content">
+          <p>Win exciting prizes and gifts throughout Zephyr events</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Homepage</title>
+    <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+    <title>Successfully Registered</title>
     <style>
         * {
             box-sizing: border-box;
         }
         body {
-            background-image: url("{% static 'CA Homepage bg.jpg' %}");
+            background-image: url("{% static 'Incentives bg.jpg' %}");
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
+            /* height: 100vh; */
         }
         .navbar {
             display: flex;
@@ -23,7 +26,7 @@
         .navbar .left {
             padding: 10px 20px;
         }
-        .logo {
+        .desktop-logo {
             margin: 0 0 0 1rem;
             height: 12vh;
         }
@@ -34,15 +37,6 @@
             display: flex;
             align-items: center;
             margin: 0 1.5rem 0 0;
-        }
-        a {
-            border: 2px solid white;
-            border-radius: 25px;
-            color: azure;
-            text-decoration: none;
-            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
-            padding: 7px 15px;
-            margin: 0 2rem;
         }
         .content .left {
             width: 50%;
@@ -60,26 +54,27 @@
             width: 48%;
         }
         .content .right .box1 {
-            margin: 7rem 0 0 0;
+            margin: 4rem 0 0 0;
             color: white;
             font-size: 25px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .content .right .box2 {
-            margin: -2rem 0 0 0;
+            margin: 1rem 0 0 0;
             color: white;
             font-size: 85px;
+            height: 48vh;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 10%;
         }
         .content .right .box3 {
-            margin: -1rem 0 0 -2rem;
+            margin: 0 0 0 -2rem;
             color: white;
             font-size: 33px;
             font-family: Arial, sans-serif;
         }
         .content .right .box4 {
-            margin: 2rem 4.5rem 0 0;
+            margin: 1rem 4.5rem 0 0;
             display: flex;
             float: right;
             color: white;
@@ -100,7 +95,216 @@
             padding: 5px;
             height: 5vh;
         }
-        .central-content
+        #iconrow1
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #iconrow2
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .row-img
+        {
+            height: 100%;
+            width: 100%;
+        }
+        .headbox
+        {
+            color: white;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .subbox
+        {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 80%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-back {
+  background-color: #210060 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  line-height: 15px;
+  font-size: 0.8rem;
+  transform: rotateY(180deg);
+}
+.mobile-container {
+      max-width: 900px;
+      margin: auto;
+      /* background-color: #555; */
+      color: white;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      position: relative;
+    }
+
+    .topnav #myLinks {
+      display: none;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 12vh;
+      width: 20vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .active {
+      color: white;
+      height: 12vh;
+    }
+
+    #incentives-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-break
+    {
+      width: 90%;
+      left:5%;
+      height: 5vh;
+    }
+    .inc {
+      width: 90%;
+      left: 5%;
+      height: 20vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* background-color: aqua; */
+    }
+
+    .inc-image-holder {
+      height: 100%;
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-divider
+    {
+      height: 100%;
+      width: 2%;
+    }
+    .inc-image {
+      width: 90%;
+      height: 90%;
+    }
+
+    .logo {
+      height: 90%;
+      width: 20%;
+    }
+
+    #hamburger-icon {
+      transform: scale(1.4);
+      color: white;
+    }
+
+    .inc-content {
+      width: 63%;
+      height: 100%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+    #hero-phone
+{
+  height: 90vh;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly ;
+  /* background-color: aqua; */
+}
+.hero-subbox-phone
+{
+  color: white;
+  font-size: 1.2rem;
+}
+.hero-headbox-phone
+{
+  color: white;
+  font-size: 2rem;
+}
+.hero-image-phone
+{
+  width: 90%;
+  height: 80%;
+}
+#hero-image-sizing-phone
+{
+  width: 100%;
+  height: 100%;
+}
+.central-content
         {
             height: 79vh;
             /* background-color: aqua; */
@@ -123,6 +327,82 @@
         {
             margin-top: -5vh;
         }
+    @media screen and (max-width: 900px) {
+  .navbar{
+    display: none;
+  }
+  #hero-img
+  {
+    height: 55%;
+    width: 90%;
+  }
+  .central-content
+  {
+    height: 89vh;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.8rem;
+  }
+  .content
+  {
+    display: none;
+  }
+  .mobile-container
+  {
+    display: block;
+  }
+  #incentives-phone
+  {
+    display: block;
+  }
+  #hero-phone
+{
+  display: flex;
+}
+body
+{
+    height: 100vh;
+}
+}
+@media screen and (min-width: 901px) {
+  .navbar{
+    display: flex;
+  }
+  .content
+  {
+    display: block;
+  }
+  .mobile-container
+  {
+    display: none;
+  }
+  #incentives-phone
+  {
+    display: none;
+  }
+  .navbar a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .box3 a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        #hero-phone
+{
+  display: none;
+}
+}
     </style>
 </head>
 <body>
@@ -130,18 +410,49 @@
     <div class="navbar">
         <!-- Zephyr logo -->
         <div class="left">
-            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+            <img class="desktop-logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
         </div>
         <!-- menu buttons -->
         <div class="right">
-            <a href="#Home">HOME</a>
-            <a href="#About">ABOUT</a>
-            <a href="#Responsibilities">RESPONSIBILITIES</a>
-            <a href="Incentives">INCENTIVES</a>
-            <a href="FAQ">FAQ</a>
+          <a href="/zephyr/home">HOME</a>
+          <a href="/zephyr/about">ABOUT</a>
+          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
+          <a href="/zephyr/incentives">INCENTIVES</a>
+          <a href="/zephyr/help">HELP</a>
         </div>
     </div>
     <!-- Content -->
+    <div class="mobile-container">
+
+      <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="/zephyr/home" class="active"><img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo"></a>
+        <div id="myLinks">
+          <a href="/zephyr/home">HOME</a>
+          <a href="/zephyr/about">ABOUT</a>
+          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
+          <a href="/zephyr/incentives">INCENTIVES</a>
+          <a href="/zephyr/help">HELP</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i id="hamburger-icon" class="fa fa-bars"></i>
+        </a>
+      </div>
+  
+  
+      <!-- End smartphone / tablet look -->
+    </div>
+  
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
     <div class="central-content">
         <img id="hero-img" src="{% static 'Success page image.png' %}">
         <div id="hero-content">
@@ -158,12 +469,16 @@
             <div class="box4">
                 <p>Connect with us</p>
                 <div class="social">
-                    <img class="insta" src="{% static 'Ig.png' %}" alt="Instagram">
-                    <img class="fb" src="{% static 'Fb.png' %}" alt="Facebook">
+                  <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                  <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
                 </div>
                 
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    
 </body>
 </html>

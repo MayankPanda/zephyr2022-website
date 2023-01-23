@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
-    <title>Homepage</title>
+    <title>Contact Us</title>
     <style>
         * {
             box-sizing: border-box;
@@ -68,13 +68,13 @@
             line-height: 10%;
         }
         .content .right .box3 {
-            margin: -2.2rem 0 0 -2rem;
+            margin: 0 0 0 -2rem;
             color: white;
             font-size: 33px;
             font-family: Arial, sans-serif;
         }
         .content .right .box4 {
-            margin: 0rem 4.5rem 0 0;
+            margin: 1rem 4.5rem 0 0;
             display: flex;
             float: right;
             color: white;
@@ -287,14 +287,12 @@
 .hero-subbox-phone
 {
   color: white;
-  font-size: 1.4rem;
-  text-align: center;
+  font-size: 1.2rem;
 }
 .hero-headbox-phone
 {
   color: white;
   font-size: 2rem;
-  text-align: center;
 }
 .hero-image-phone
 {
@@ -306,9 +304,75 @@
   width: 100%;
   height: 100%;
 }
+.central-content
+        {
+            height: 49vh;
+            /* background-color: aqua; */
+            margin-top: 20vh;
+            width: 80vw;
+            margin-left: 10vw;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+        #hero-img
+        {
+            height: 95%;
+            width: 70%;
+        }
+        #hero-content
+        {
+            margin-top: -5vh;
+        }
+        .contact-box
+        {
+            width: 50vw;
+            height: 20vh;
+            background-color: #210060;
+            border: 2px white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-box i
+        {
+            padding: 15px;
+        }
+        .contact-box a
+        {
+            color: white;
+            text-decoration: none;
+            /* border: 2px solid white;
+            border-radius: 25px; */
+            /* color: azure; */
+            /* text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem; */
+        }
+        .box4 a
+        {
+            text-decoration: none;
+        }
     @media screen and (max-width: 900px) {
   .navbar{
     display: none;
+  }
+  #hero-img
+  {
+    height: 55%;
+    width: 90%;
+  }
+  .central-content
+  {
+    height: 39vh;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.1rem;
   }
   .content
   {
@@ -325,6 +389,10 @@
   #hero-phone
 {
   display: flex;
+}
+body
+{
+    height: 100vh;
 }
 }
 @media screen and (min-width: 901px) {
@@ -343,16 +411,7 @@
   {
     display: none;
   }
-  .navbar a {
-            border: 2px solid white;
-            border-radius: 25px;
-            color: azure;
-            text-decoration: none;
-            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
-            padding: 7px 15px;
-            margin: 0 2rem;
-        }
-        .box3 a {
+  .navbar .right a {
             border: 2px solid white;
             border-radius: 25px;
             color: azure;
@@ -385,37 +444,6 @@
         </div>
     </div>
     <!-- Content -->
-    <div class="content">
-        <!-- illustration -->
-            <!-- illustration -->
-            <div class="left">
-                <img class="illustration" src="{% static 'CA Homepage image.png' %}" alt="illustration">
-            </div>
-            <!-- text -->
-            <div class="right">
-                <!-- Welcome text -->
-                <div class="box1">Welcome to Zephyr's</div>
-                <!-- CA title -->
-                <div class="box2">
-                    <p>CAMPUS</p>
-                    <p>AMBASSADOR</p>
-                    <p>PROGRAM</p>
-                </div>
-                <!-- Register button -->
-                <div class="box3">
-                    <a href="/zephyr/register">REGISTER</a>
-                </div>
-                <!-- social media links -->
-                <div class="box4">
-                    <p>Connect with us</p>
-                    <div class="social">
-                        <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
-                        <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     <div class="mobile-container">
 
       <!-- Top Navigation Menu -->
@@ -448,22 +476,37 @@
         }
       }
     </script>
-    <div id="hero-phone">
-      <div class="hero-heading-phone">
-        <p class="hero-subbox-phone">Welcome to Zephyr's</p>
-        <p class="hero-headbox-phone">CAMPUS</p>
-        <p class="hero-headbox-phone">AMBASSADOR</p>
-        <p class="hero-headbox-phone">PROGRAM</p>
-        <!-- <p class="hero-subbox-phone">FOR CAMPUS AMBASSADORS</p> -->
-      </div>
-      <div class="hero-image-phone">
-        <img id="hero-image-sizing-phone" src="{% static 'CA Homepage image.png' %}">
-      </div>
-    </div>
-    <!-- <div class="content" id="phone-foot">
-        <div class="box3">
-            <a href="/zephyr/register">REGISTER</a>
+    <div class="central-content">
+        <!-- <img id="hero-img" src="{% static 'Success page image.png' %}"> -->
+        <div id="hero-content">
+            
+            <div class="contact-box">
+                <a href="https://wa.me/919630756606"><i class="fa fa-brands fa-whatsapp"></i></a><p>Contact us on WhatsApp!</p></div>
+                
+                <div class="contact-box">
+                    <a href="mailto:mayankpanda7305@gmail.com"><i class="fa fa-solid fa-envelope"></i></a><p>Contact us on Email!</p></div>
         </div>
-    </div> -->
+    </div>
+    <div class="content">
+        <!-- illustration -->
+        
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                        <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
 </body>
 </html>

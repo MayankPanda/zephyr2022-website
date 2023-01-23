@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Homepage</title>
+    <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+    <title>About Zephyr</title>
     <style>
         * {
             box-sizing: border-box;
@@ -42,7 +43,7 @@
             margin: 0 1.5rem 0 0;
         }
 
-        a {
+        /* a {
             border: 2px solid white;
             border-radius: 25px;
             color: azure;
@@ -50,7 +51,7 @@
             background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0, 0, 151, 0.52));
             padding: 7px 15px;
             margin: 0 2rem;
-        }
+        } */
 
         .content .left {
             width: 50%;
@@ -160,7 +161,7 @@
             margin-top: -16vh;
             margin-left: 35vw;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.7rem;
+            font-size: 1.4rem;
         }
         #content-title
         {
@@ -172,6 +173,58 @@
             font-size: 1.2rem;
             transform: translateY(-6vh);
         }
+        .phone-content
+        {
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .phone-heading
+        {
+            color: white;
+            /* font-size: 2rem; */
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #phone-heading-title
+        {
+            font-size: 2rem;
+        }
+        #phone-heading-subtitle
+        {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+@media screen and (max-width: 1200px) {
+  body
+  {
+    background-image: url("{% static 'Incentives bg.jpg' %}");
+    height: 120vh;
+  }
+  .upper-content
+  {
+    display: none;
+  }
+  .lower-content
+  {
+    display: none;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .phone-heading
+  {
+    display: none;
+  }
+  .phone-content
+  {
+    display: none;
+  }
+}
     </style>
 </head>
 
@@ -180,7 +233,7 @@
     <div class="navbar">
         <!-- Zephyr logo -->
         <div class="left">
-            <img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+            <a href="/zephyr/home"><img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo"></a>
         </div>
         <!-- menu buttons -->
     </div>
@@ -201,6 +254,19 @@
         <div id="content-body">
             <p>Annual Aviation Fest of IIT Bombay organised by The Aerospace Engineering Association</p>
         </div>
+    </div>
+    <div class="phone-heading">
+        <div id="phone-heading-title">ABOUT ZEPHYR</div>
+        <div id="phone-heading-subtitle">Annual Aviation Fest of IIT Bombay organised by The Aerospace Engineering Association</div>
+    </div>
+    <div class="phone-content">
+        <p>Zephyr become an annual workshop on Aerospace Education and Research at IIT Bombay. It aims to provide a
+            platform for students, scientists, professors and the industry to come together, showcase their work and
+            exchange ideas. A national platform for the confluence of aerospace students, enthusiasts, astronauts and
+            companies. It caters to the layman who is fascinated by flying crafts as to the expert who makes fascinating
+            crafts. With challenging competitions, interactive workshops, glamorous and informative exhibitions,
+            fascinating airshows, panel debates and the coolest lectures by the role models in the field of Aerospace
+            and Aviation. Guest lectures, panel debates, exhibitions. Zephyr has it all!</p>
     </div>
 </body>
 
