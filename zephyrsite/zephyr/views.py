@@ -30,6 +30,18 @@ def about(request):
     return render(request,'about.html')
 def help_page(request):
     return render(request,'faq.html')
+def main_homepage(request):
+    return render(request,'main_homepage.html')
+def surgical_strike(request):
+    return render(request,'surgical_strike.html')
+def button_test(request):
+    return render(request,'testbuttonpanel.html')
+def competitions(request):
+    return render(request,'competitions.html')
+def contact(request):
+    return render(request,'contact.html')
+def soon(request):
+    return render(request,'regsoon.html')
 def home_view(request):
     context ={}
  

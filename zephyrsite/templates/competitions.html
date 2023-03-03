@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
-    <title>Responsibilites</title>
+    <title>Homepage</title>
     <style>
         * {
             box-sizing: border-box;
         }
         body {
-            background-image: url("{% static 'Responsibilities bg.jpg' %}");
+            background-image: url("{% static 'drone_background.png' %}");
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
@@ -47,7 +47,6 @@
         .illustration {
             height: 65vh;
             margin: 4rem 0 0 1rem;
-            width: 37vw;
             align-self: center;
         }
         .content .right {
@@ -61,21 +60,25 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .content .right .box2 {
-            margin: 1rem 0 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: -2rem 0 0 0;
             color: white;
-            font-size: 85px;
+            font-size: 3rem;
             height: 48vh;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 10%;
         }
         .content .right .box3 {
-            margin: 0 0 0 -2rem;
+            margin: -2.2rem 0 0 -2rem;
             color: white;
             font-size: 33px;
             font-family: Arial, sans-serif;
         }
         .content .right .box4 {
-            margin: 1rem 4.5rem 0 0;
+            margin: 0rem 4.5rem 0 0;
             display: flex;
             float: right;
             color: white;
@@ -274,13 +277,9 @@
       justify-content: space-evenly;
       text-align: center;
     }
-    .mobile-container
-{
-    font-family: Arial, Helvetica, sans-serif;
-}
     #hero-phone
 {
-  /* height: 90vh; */
+  height: 90vh;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -292,12 +291,14 @@
 .hero-subbox-phone
 {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  text-align: center;
 }
 .hero-headbox-phone
 {
   color: white;
   font-size: 2rem;
+  text-align: center;
 }
 .hero-image-phone
 {
@@ -306,8 +307,106 @@
 }
 #hero-image-sizing-phone
 {
-  width: 90%;
+  width: 100%;
   height: 100%;
+}
+.home-button-panel
+{
+    height: 70vh;
+    background-color: red;
+    width: 45vw;
+    margin-right: 5vw;
+}
+.competition-tiles
+{
+    width: 90vw;
+    margin-left: 5vw;
+    /* background-color: aqua; */
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.competition-tiles-phone
+{
+    width: 90vw;
+    margin-left: 5vw;
+    /* background-color: aqua; */
+    /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.competition-box {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width: 35vw;
+        height: 50vh;
+        background-image: url("{% static 'Competitions box.png' %}");
+        /* background-color: red; */
+        background-repeat: no-repeat;
+        background-size: contain;
+        /* border: 1px black; */
+        }
+
+.comp-title
+{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight:700 ;
+    transform: translateX(-2vw);
+}  
+.comp-title-text
+{
+    transform: translateY(-2vh);
+}  
+.comp-img
+{
+    width: 80%;
+    height: 60%;
+    transform: translateX(-2vw);
+}
+.comp-title-btn-panel
+{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 1.2rem;
+    transform: translateX(-2vw);
+}
+.comp-title-btn
+{
+    background-image:linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+    padding: 7px 15px;
+    border-radius: 25px;
+    border: 2px solid white;
+    
+}
+.comp-title-btn-panel a
+{
+    color: azure;
+    text-decoration: none;
+}
+.comp-title-btn a
+{
+    color: azure;
+    text-decoration: none;
+}
+.mobile-container
+{
+    font-family: Arial, Helvetica, sans-serif;
 }
     @media screen and (max-width: 900px) {
   .navbar{
@@ -329,17 +428,31 @@
 {
   display: flex;
 }
-.inc-break
+.competition-tiles
 {
-  height: 15vh;
+    display: none;
 }
-.inc-content
+.competition-box
 {
-  font-size: 1rem;
+    /* background-color: red; */
+    width: 70vw;
+    background-size:cover;
+    border-radius: 25px;
 }
-#hero-image-sizing-phone
+/* .comp-title
 {
-  height: 30vh;
+    transform: translateX(+2vw);
+} */
+.comp-title-btn-panel
+{
+    transform: translateX(+1vw);
+    font-size: 1rem;
+}
+.comp-title
+{
+    font-size: 1.5rem;
+    transform: translateX(+1vw);
+    transform: translateY(+2vh);
 }
 }
 @media screen and (min-width: 901px) {
@@ -354,6 +467,10 @@
   {
     display: none;
   }
+  .competition-tiles-phone
+{
+    display: none;
+}
   #incentives-phone
   {
     display: none;
@@ -380,7 +497,15 @@
 {
   display: none;
 }
-
+}
+.right-button-panel
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+    background-color: aqua;
+    height: 55vh;
 }
     </style>
 </head>
@@ -395,84 +520,71 @@
         <div class="right">
           <a href="/zephyr/home">HOME</a>
           <a href="/zephyr/about">ABOUT</a>
-          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
-          <a href="/zephyr/incentives">INCENTIVES</a>
-          <a href="/zephyr/help">HELP</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
+        </div>
+    </div>
+    <div class="competition-tiles">
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">SURGICAL STRIKE 2.0</p>
+            </div>
+            <img class="comp-img" src="{% static 'Drone illustration.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/surgical_strike"><div class="comp-title-btn">EXPLORE</div></a>
+                <a href="https://docs.google.com/forms/d/1QkuNAsWpPoEbBNF-Bhp-Th2hjC5YoQcXJnAHnx8NgMo/edit"><div class="comp-title-btn">REGISTER</div></a>
+            </div>
+        </div>
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">WATER ROCKET</p>
+            </div>
+            <img class="comp-img" src="{% static 'rocket.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/comingsoon"><div class="comp-title-btn">EXPLORE</div></a>
+                <a href="/zephyr/comingsoon"><div class="comp-title-btn">REGISTER</div></a>
+            </div>
         </div>
     </div>
     <!-- Content -->
     <div class="content">
+        
         <!-- illustration -->
-        <div class="left">
-            <img class="illustration" src="{% static 'Responsibilites image.png' %}" alt="illustration">
-        </div>
-        <!-- text -->
-        <div class="right">
-            <!-- Welcome text -->
-            <div class="headbox">
-                <p>RESPONSIBILITIES</p>
-            </div>
-            <div class="subbox">
-                <p>OF CAMPUS AMBASSADOR</p>
-            </div>
-            <!-- CA title -->
-            <div class="box2">
-                <div id="iconrow1">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Publicity.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Create awareness for Zephyr on the campus</p>
-                            <p>Help in Publicity of events under Zephyr</p>
-                            <p>Ensure adequate participation from the campus in Zephyr</p>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Face.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Own your campus by being it's face</p>
-                            <p>Provide regular updates on the campus</p>
-                            <p>Share the database of students willing to participate</p>
-                          </div>
-                        </div>
-                      </div>
+            <!-- illustration -->
+            <!-- text -->
+            <div class="right">
+                <!-- Welcome text -->
+                <!-- <div class="box1">Welcome to Zephyr's</div> -->
+                <!-- CA title -->
+                <!-- <div class="box2">
+                     <p>EXPLORING NEW</p>
+                    <p>HORIZONS</p> 
+                <div class="right-button-panel">
+                <div class="right-button">
+                    EVENTS
                 </div>
-                <div id="iconrow2">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Ideate.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Coordinate with the team and notify students in your college/university about the various activities of Zephyr events</p>
-                            <p>Build excellent raport with college authorities and students on the campus</p>
-                          </div>
-                        </div>
-                      </div>
+                <div class="right-button">
+                    COMPETITIONS
                 </div>
-                
-            </div>
-            <!-- Register button -->
-            <div class="box3">
-                <a href="/zephyr/register">REGISTER</a>
-            </div>
-            <!-- social media links -->
-            <div class="box4">
-                <p>Connect with us</p>
-                <div class="social">
-                  <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
-                  <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                <div class="right-button">
+                    SYMPOSIUM
                 </div>
-                
+            </div>
+        </div> -->
+                <!-- Register button -->
+                <!-- social media links -->
+                <div class="box4">
+                    <p>Connect with us</p>
+                    <div class="social">
+                        <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                        <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
     <div class="mobile-container">
 
       <!-- Top Navigation Menu -->
@@ -481,10 +593,8 @@
         <div id="myLinks">
           <a href="/zephyr/home">HOME</a>
           <a href="/zephyr/about">ABOUT</a>
-          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
-          <a href="/zephyr/incentives">INCENTIVES</a>
-          <a href="/zephyr/help">HELP</a>
-          <a href="/zephyr/register">REGISTER</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i id="hamburger-icon" class="fa fa-bars"></i>
@@ -505,61 +615,47 @@
         }
       }
     </script>
-    <div id="hero-phone">
+    <!-- <div id="hero-phone">
       <div class="hero-heading-phone">
-        <p class="hero-headbox-phone">RESPONSIBILITIES</p>
-        <p class="hero-subbox-phone">OF CAMPUS AMBASSADORS</p>
+        <p class="hero-subbox-phone">Welcome to Zephyr's</p>
+        <p class="hero-headbox-phone">CAMPUS</p>
+        <p class="hero-headbox-phone">AMBASSADOR</p>
+        <p class="hero-headbox-phone">PROGRAM</p>
+         <p class="hero-subbox-phone">FOR CAMPUS AMBASSADORS</p> 
       </div>
       <div class="hero-image-phone">
-        <img id="hero-image-sizing-phone" src="{% static 'Responsibilites image.png' %}">
+        <img id="hero-image-sizing-phone" src="{% static 'Homepage illustration.png' %}">
       </div>
+    </div> -->
+    <!-- <div class="content" id="phone-foot">
+        <div class="box3">
+            <a href="/zephyr/register">REGISTER</a>
+        </div>
+    </div> -->
+    <div class="competition-tiles-phone">
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">SURGICAL STRIKE 2.0</p>
+            </div>
+            <img class="comp-img" src="{% static 'Drone illustration.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/surgical_strike"><div class="comp-title-btn">EXPLORE</div></a>
+                <a href="https://docs.google.com/forms/d/1QkuNAsWpPoEbBNF-Bhp-Th2hjC5YoQcXJnAHnx8NgMo/edit"><div class="comp-title-btn">REGISTER</div></a>
+            </div>
+        </div>
+        <br>
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">WATER ROCKET</p>
+            </div>
+            <img class="comp-img" src="{% static 'rocket.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/comingsoon"><div class="comp-title-btn">EXPLORE</div></a>
+                <a href="/zephyr/comingsoon"><div class="comp-title-btn">REGISTER</div></a>
+            </div>
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <div id="incentives-phone">
-      <div class="inc">
-        <div class="inc-image-holder">
-          <img src="{% static 'Publicity.png' %}" class="inc-image">
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-content">
-            <p>Create awareness for Zephyr on the campus</p>
-            <p>Help in Publicity of events under Zephyr</p>
-            <p>Ensure adequate participation from the campus in Zephyr</p>
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-      <div class="inc">
-        <div class="inc-content">
-            <p>Own your campus by being it's face</p>
-            <p>Provide regular updates on the campus</p>
-            <p>Share the database of students willing to participate</p>
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-image-holder">
-          <img src="{% static 'Face.png' %}" class="inc-image">
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-      <div class="inc">
-        <div class="inc-image-holder">
-          <img src="{% static 'Ideate.png' %}" class="inc-image">
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-content">
-            <p>Coordinate with the team and notify students in your college/university about the various activities of Zephyr events</p>
-            <p>Build excellent raport with college authorities and students on the campus</p>
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-    </div>
-    <br>
 </body>
 </html>

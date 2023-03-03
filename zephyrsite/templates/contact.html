@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
-    <title>Responsibilites</title>
+    <title>Contact Us</title>
     <style>
         * {
             box-sizing: border-box;
         }
         body {
-            background-image: url("{% static 'Responsibilities bg.jpg' %}");
+            background-image: url("{% static 'Incentives bg.jpg' %}");
             background-repeat: no-repeat;
             position: relative;
             background-size: cover;
@@ -47,7 +47,6 @@
         .illustration {
             height: 65vh;
             margin: 4rem 0 0 1rem;
-            width: 37vw;
             align-self: center;
         }
         .content .right {
@@ -274,13 +273,9 @@
       justify-content: space-evenly;
       text-align: center;
     }
-    .mobile-container
-{
-    font-family: Arial, Helvetica, sans-serif;
-}
     #hero-phone
 {
-  /* height: 90vh; */
+  height: 90vh;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -306,12 +301,82 @@
 }
 #hero-image-sizing-phone
 {
-  width: 90%;
+  width: 100%;
   height: 100%;
+}
+.central-content
+        {
+            height: 49vh;
+            /* background-color: aqua; */
+            margin-top: 20vh;
+            width: 80vw;
+            margin-left: 10vw;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+        #hero-img
+        {
+            height: 95%;
+            width: 70%;
+        }
+        #hero-content
+        {
+            margin-top: -5vh;
+        }
+        .contact-box
+        {
+            width: 50vw;
+            height: 20vh;
+            background-color: #210060;
+            border: 2px white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-box i
+        {
+            padding: 15px;
+        }
+        .contact-box a
+        {
+            color: white;
+            text-decoration: none;
+            /* border: 2px solid white;
+            border-radius: 25px; */
+            /* color: azure; */
+            /* text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem; */
+        }
+        .box4 a
+        {
+            text-decoration: none;
+        }
+        .mobile-container
+{
+    font-family: Arial, Helvetica, sans-serif;
 }
     @media screen and (max-width: 900px) {
   .navbar{
     display: none;
+  }
+  #hero-img
+  {
+    height: 55%;
+    width: 90%;
+  }
+  .central-content
+  {
+    height: 39vh;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.1rem;
   }
   .content
   {
@@ -329,17 +394,9 @@
 {
   display: flex;
 }
-.inc-break
+body
 {
-  height: 15vh;
-}
-.inc-content
-{
-  font-size: 1rem;
-}
-#hero-image-sizing-phone
-{
-  height: 30vh;
+    height: 100vh;
 }
 }
 @media screen and (min-width: 901px) {
@@ -358,16 +415,7 @@
   {
     display: none;
   }
-  .navbar a {
-            border: 2px solid white;
-            border-radius: 25px;
-            color: azure;
-            text-decoration: none;
-            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
-            padding: 7px 15px;
-            margin: 0 2rem;
-        }
-        .box3 a {
+  .navbar .right a {
             border: 2px solid white;
             border-radius: 25px;
             color: azure;
@@ -380,7 +428,6 @@
 {
   display: none;
 }
-
 }
     </style>
 </head>
@@ -395,84 +442,11 @@
         <div class="right">
           <a href="/zephyr/home">HOME</a>
           <a href="/zephyr/about">ABOUT</a>
-          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
-          <a href="/zephyr/incentives">INCENTIVES</a>
-          <a href="/zephyr/help">HELP</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
         </div>
     </div>
     <!-- Content -->
-    <div class="content">
-        <!-- illustration -->
-        <div class="left">
-            <img class="illustration" src="{% static 'Responsibilites image.png' %}" alt="illustration">
-        </div>
-        <!-- text -->
-        <div class="right">
-            <!-- Welcome text -->
-            <div class="headbox">
-                <p>RESPONSIBILITIES</p>
-            </div>
-            <div class="subbox">
-                <p>OF CAMPUS AMBASSADOR</p>
-            </div>
-            <!-- CA title -->
-            <div class="box2">
-                <div id="iconrow1">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Publicity.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Create awareness for Zephyr on the campus</p>
-                            <p>Help in Publicity of events under Zephyr</p>
-                            <p>Ensure adequate participation from the campus in Zephyr</p>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Face.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Own your campus by being it's face</p>
-                            <p>Provide regular updates on the campus</p>
-                            <p>Share the database of students willing to participate</p>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-                <div id="iconrow2">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img src="{% static 'Ideate.png' %}" class="row-img" alt="Avatar">
-                          </div>
-                          <div class="flip-card-back">
-                            <p>Coordinate with the team and notify students in your college/university about the various activities of Zephyr events</p>
-                            <p>Build excellent raport with college authorities and students on the campus</p>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-                
-            </div>
-            <!-- Register button -->
-            <div class="box3">
-                <a href="/zephyr/register">REGISTER</a>
-            </div>
-            <!-- social media links -->
-            <div class="box4">
-                <p>Connect with us</p>
-                <div class="social">
-                  <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
-                  <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
     <div class="mobile-container">
 
       <!-- Top Navigation Menu -->
@@ -481,10 +455,8 @@
         <div id="myLinks">
           <a href="/zephyr/home">HOME</a>
           <a href="/zephyr/about">ABOUT</a>
-          <a href="/zephyr/responsibilities">RESPONSIBILITIES</a>
-          <a href="/zephyr/incentives">INCENTIVES</a>
-          <a href="/zephyr/help">HELP</a>
-          <a href="/zephyr/register">REGISTER</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i id="hamburger-icon" class="fa fa-bars"></i>
@@ -505,61 +477,37 @@
         }
       }
     </script>
-    <div id="hero-phone">
-      <div class="hero-heading-phone">
-        <p class="hero-headbox-phone">RESPONSIBILITIES</p>
-        <p class="hero-subbox-phone">OF CAMPUS AMBASSADORS</p>
-      </div>
-      <div class="hero-image-phone">
-        <img id="hero-image-sizing-phone" src="{% static 'Responsibilites image.png' %}">
-      </div>
+    <div class="central-content">
+        <!-- <img id="hero-img" src="{% static 'Success page image.png' %}"> -->
+        <div id="hero-content">
+            
+            <div class="contact-box">
+                <a href="https://wa.me/91903368821"><i class="fa fa-brands fa-whatsapp"></i></a><p>Contact us on WhatsApp!</p></div>
+                
+                <div class="contact-box">
+                    <a href="mailto:ammarb.zephyr@gmail.com"><i class="fa fa-solid fa-envelope"></i></a><p>Contact us on Email!</p></div>
+        </div>
+    </div>
+    <div class="content">
+        <!-- illustration -->
+        
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                        <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                </div>
+                
+            </div>
+        </div>
     </div>
     <br>
     <br>
     <br>
-    <div id="incentives-phone">
-      <div class="inc">
-        <div class="inc-image-holder">
-          <img src="{% static 'Publicity.png' %}" class="inc-image">
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-content">
-            <p>Create awareness for Zephyr on the campus</p>
-            <p>Help in Publicity of events under Zephyr</p>
-            <p>Ensure adequate participation from the campus in Zephyr</p>
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-      <div class="inc">
-        <div class="inc-content">
-            <p>Own your campus by being it's face</p>
-            <p>Provide regular updates on the campus</p>
-            <p>Share the database of students willing to participate</p>
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-image-holder">
-          <img src="{% static 'Face.png' %}" class="inc-image">
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-      <div class="inc">
-        <div class="inc-image-holder">
-          <img src="{% static 'Ideate.png' %}" class="inc-image">
-        </div>
-        <div class="inc-divider"></div>
-        <div class="inc-content">
-            <p>Coordinate with the team and notify students in your college/university about the various activities of Zephyr events</p>
-            <p>Build excellent raport with college authorities and students on the campus</p>
-        </div>
-      </div>
-      <div class="inc-break">
-  
-      </div>
-    </div>
-    <br>
+    
 </body>
 </html>
