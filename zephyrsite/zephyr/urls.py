@@ -17,6 +17,8 @@ urlpatterns = [
     path('about',views.about),#about page
     path('help',views.help_page),#about page
     path('surgical_strike',views.surgical_strike),#about page
+    path('water_rocket',views.water_rocket),#about page
+    path('aerocontraption',views.aerocontraption),#about page
     path('test_button',views.button_test),#about page
     path('competitions',views.competitions),#competitions page
     path('contact',views.contact),#contact page

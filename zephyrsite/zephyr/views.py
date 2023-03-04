@@ -34,6 +34,10 @@ def main_homepage(request):
     return render(request,'main_homepage.html')
 def surgical_strike(request):
     return render(request,'surgical_strike.html')
+def water_rocket(request):
+    return render(request,'water_rocket.html')
+def aerocontraption(request):
+    return render(request,'aerocontraption.html')
 def button_test(request):
     return render(request,'testbuttonpanel.html')
 def competitions(request):

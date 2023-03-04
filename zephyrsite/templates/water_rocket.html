@@ -1,0 +1,531 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+    <title>Water Rocket</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("{% static 'drone_background.png' %}");
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+            /* height: 100vh; */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar .left {
+            padding: 10px 20px;
+        }
+
+        .desktop-logo {
+            margin: 0 0 0 1rem;
+            height: 12vh;
+        }
+
+        .navbar .right {
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            margin: 0 1.5rem 0 0;
+        }
+
+        .content .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+
+        .illustration {
+            height: 75vh;
+            width: 40vw;
+            margin: 2rem 0 0 1rem;
+            align-self: center;
+        }
+
+        .content .right {
+            float: right;
+            width: 48%;
+        }
+
+        .content .right .box1 {
+            margin: 1rem 0 0 0;
+            color: white;
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .content .right .box1 .right-comp-text {
+            font-size: 1rem;
+        }
+
+        .content .right .box1 .right-comp-heading {
+            font-size: 1.5rem;
+        }
+
+        .content .right .box2 {
+            margin: 1rem 0 0 0;
+            color: white;
+            font-size: 85px;
+            height: 48vh;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 10%;
+        }
+
+        .content .right .box3 {
+            margin: 0.2rem 0 0 -2rem;
+            color: white;
+            font-size: 33px;
+            font-family: Arial, sans-serif;
+        }
+
+        .content .right .box4 {
+            margin: 11.4rem 4.5rem 0 0;
+            display: flex;
+            float: right;
+            color: white;
+            font-size: 22.5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+        }
+
+        .fb {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+
+        .insta {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+
+        #iconrow1 {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #iconrow2 {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .row-img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .headbox {
+            color: white;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+
+        .subbox {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 25%;
+            height: 80%;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .mobile-container {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .flip-card-back {
+            background-color: #210060;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            color: white;
+            line-height: 15px;
+            font-size: 0.8rem;
+            transform: rotateY(180deg);
+        }
+
+        .mobile-container {
+            max-width: 900px;
+            margin: auto;
+            /* background-color: #555; */
+            color: white;
+            border-radius: 10px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            /* background-color: #333; */
+            position: relative;
+        }
+
+        .topnav #myLinks {
+            display: none;
+        }
+
+        .topnav a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
+        }
+
+        .topnav a.icon {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 12vh;
+            width: 20vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .active {
+            color: white;
+            height: 12vh;
+        }
+
+        #incentives-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inc-break {
+            width: 90%;
+            left: 5%;
+            height: 5vh;
+        }
+
+        .inc {
+            width: 90%;
+            left: 5%;
+            height: 20vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* background-color: aqua; */
+        }
+
+        .inc-image-holder {
+            height: 100%;
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inc-divider {
+            height: 100%;
+            width: 2%;
+        }
+
+        .inc-image {
+            width: 90%;
+            height: 90%;
+        }
+
+        .logo {
+            height: 90%;
+            width: 20%;
+        }
+
+        #hamburger-icon {
+            transform: scale(1.4);
+            color: white;
+        }
+
+        .inc-content {
+            width: 63%;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+
+        #hero-phone {
+
+            /* height: 90vh; */
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            /* background-color: aqua; */
+        }
+
+        .hero-subbox-phone {
+            color: white;
+            font-size: 1rem;
+            /* text-align: center; */
+        }
+
+        .hero-headbox-phone {
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-image-phone {
+            width: 90%;
+            height: 80%;
+        }
+
+        #hero-image-sizing-phone {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: 900px) {
+            .navbar {
+                display: none;
+            }
+
+            .content {
+                display: none;
+            }
+
+            .mobile-container {
+                display: block;
+            }
+
+            #incentives-phone {
+                display: block;
+            }
+
+            #hero-phone {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 901px) {
+            .navbar {
+                display: flex;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .mobile-container {
+                display: none;
+            }
+
+            #incentives-phone {
+                display: none;
+            }
+
+            .navbar a {
+                border: 2px solid white;
+                border-radius: 25px;
+                color: azure;
+                text-decoration: none;
+                background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0, 0, 151, 0.52));
+                padding: 7px 15px;
+                margin: 0 2rem;
+            }
+
+            .box3 a {
+                border: 2px solid white;
+                border-radius: 25px;
+                color: azure;
+                text-decoration: none;
+                background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0, 0, 151, 0.52));
+                padding: 7px 15px;
+                margin: 0 2rem;
+            }
+
+            #hero-phone {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Zephyr logo -->
+        <div class="left">
+            <img class="desktop-logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+        </div>
+        <!-- menu buttons -->
+        <div class="right">
+            <a href="/zephyr/home">HOME</a>
+            <a href="/zephyr/about">ABOUT</a>
+            <a href="/zephyr/cahome">CA HOMEPAGE</a>
+            <a href="/zephyr/contact">CONTACT</a>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="content">
+        <!-- illustration -->
+        <!-- illustration -->
+        <div class="left">
+            <img class="illustration" src="{% static 'Water Rocket.png' %}" alt="illustration">
+        </div>
+        <!-- text -->
+        <div class="right">
+            <!-- Welcome text -->
+            <div class="box1">
+                <p class="right-comp-heading">ABOUT</p>
+                <p class="right-comp-text">A team of 2-3 members (from same or different colleges) required to build an
+                    aerodynamically efficient water rocket system using simple plastic bottles (maximum capacity of 2
+                    litres) and a launcher which is capable of taking in the specified value of pressure, 5 bar. The team
+                    must be prepared with the rocket and the launcher system. However, the team will be provided with water
+                    and it will be pressurised to 5 bar on the arena during the event day. The rocket must be capable of
+                    landing within the specified sector (higher points for 30deg sector, lower points for 45deg sector). It
+                    will also be judged based on the maximum range (from the launching spot till the rocket first hits the
+                    ground) covered. The team is also encouraged to build a two stage rocket system however there is a
+                    limitation of maximum 2 litres of water capacity. Bonus points shall be awarded to the team with special
+                    design which successfully performed the prior task. Note the only source of propulsion must be from the
+                    pressurised water. Details about the rules and regulation and basis of judgement shall be updated soon.</p>
+                
+
+            </div>
+            <!-- CA title -->
+            <!-- <div class="box2">
+                    <p>CAMPUS</p>
+                    <p>AMBASSADOR</p>
+                    <p>PROGRAM</p>
+                </div> -->
+            <!-- Register button -->
+            <!-- <div class="box3">
+                <a href="/zephyr/register">REGISTER</a>
+            </div> -->
+            <!-- social media links -->
+            <div class="box4">
+                <p>Connect with us</p>
+                <div class="social">
+                    <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}"
+                            alt="Instagram"></a>
+                    <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb"
+                            src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mobile-container">
+
+        <!-- Top Navigation Menu -->
+        <div class="topnav">
+            <a href="/zephyr/home" class="active"><img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo"></a>
+            <div id="myLinks">
+                <a href="/zephyr/home">HOME</a>
+                <a href="/zephyr/about">ABOUT</a>
+                <a href="/zephyr/cahome">CA HOMEPAGE</a>
+                <a href="/zephyr/contact">CONTACT</a>
+                <a href="https://docs.google.com/forms/d/1QkuNAsWpPoEbBNF-Bhp-Th2hjC5YoQcXJnAHnx8NgMo/edit">REGISTER</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i id="hamburger-icon" class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+        <!-- End smartphone / tablet look -->
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+    <div id="hero-phone">
+        <div class="hero-image-phone">
+            <img id="hero-image-sizing-phone" src="{% static 'Water Rocket.png' %}">
+        </div>
+        <div class="hero-heading-phone">
+            <p class="hero-headbox-phone">ABOUT</p>
+            <p class="hero-subbox-phone">A team of 2-3 members (from same or different colleges) required to build an
+                aerodynamically efficient water rocket system using simple plastic bottles (maximum capacity of 2
+                litres) and a launcher which is capable of taking in the specified value of pressure, 5 bar. The team
+                must be prepared with the rocket and the launcher system. However, the team will be provided with water
+                and it will be pressurised to 5 bar on the arena during the event day. The rocket must be capable of
+                landing within the specified sector (higher points for 30deg sector, lower points for 45deg sector). It
+                will also be judged based on the maximum range (from the launching spot till the rocket first hits the
+                ground) covered. The team is also encouraged to build a two stage rocket system however there is a
+                limitation of maximum 2 litres of water capacity. Bonus points shall be awarded to the team with special
+                design which successfully performed the prior task. Note the only source of propulsion must be from the
+                pressurised water. Details about the rules and regulation and basis of judgement shall be updated soon.</p>
+        </div>
+    </div>
+    <!-- <div class="content" id="phone-foot">
+        <div class="box3">
+            <a href="/zephyr/register">REGISTER</a>
+        </div>
+    </div> -->
+</body>
+
+</html>
