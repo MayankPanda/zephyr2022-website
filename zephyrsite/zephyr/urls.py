@@ -23,4 +23,10 @@ urlpatterns = [
     path('competitions',views.competitions),#competitions page
     path('contact',views.contact),#contact page
     path('comingsoon',views.soon),#soon page
+    path('safety_in_aerospace',views.safety),#safety page
+    path('careers_in_aerospace',views.careers),#soon page
+    path('women_in_aerospace',views.women),#soon page
+    path('liquid_engine',views.liquid),#soon page
+    path('entrepreneurship',views.entrepreneurship),#soon page
+    path('lectures',views.lectures),#soon page
 ]

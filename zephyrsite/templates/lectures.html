@@ -1,0 +1,728 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3aab0d0a4c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'LOGO.png' %}" type="image/icon type">
+    <title>Homepage</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("{% static 'drone_background.png' %}");
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+            /* height: 100vh; */
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            padding: 10px 20px;
+        }
+        .desktop-logo {
+            margin: 0 0 0 1rem;
+            height: 12vh;
+        }
+        .navbar .right{
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            margin: 0 1.5rem 0 0;
+        }
+        .content .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            float: left;
+        }
+        .illustration {
+            height: 65vh;
+            margin: 4rem 0 0 1rem;
+            align-self: center;
+        }
+        .content .right {
+            float: right;
+            width: 48%;
+        }
+        .content .right .box1 {
+            margin: 4rem 0 0 0;
+            color: white;
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .content .right .box2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: -2rem 0 0 0;
+            color: white;
+            font-size: 3rem;
+            height: 48vh;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 10%;
+        }
+        .content .right .box3 {
+            margin: -2.2rem 0 0 -2rem;
+            color: white;
+            font-size: 33px;
+            font-family: Arial, sans-serif;
+        }
+        .content .right .box4 {
+            margin: 0rem 4.5rem 0 0;
+            display: flex;
+            float: right;
+            color: white;
+            font-size: 22.5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .social {
+            display: flex;
+            align-items: center;
+        }
+        .fb {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        .insta {
+            margin: 0.5rem 0 0 0;
+            padding: 5px;
+            height: 5vh;
+        }
+        #iconrow1
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #iconrow2
+        {
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .row-img
+        {
+            height: 100%;
+            width: 100%;
+        }
+        .headbox
+        {
+            color: white;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .subbox
+        {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 7%;
+        }
+        .flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 80%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-back {
+  background-color: #210060 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  line-height: 15px;
+  font-size: 0.8rem;
+  transform: rotateY(180deg);
+}
+.mobile-container {
+      max-width: 900px;
+      margin: auto;
+      /* background-color: #555; */
+      color: white;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      position: relative;
+    }
+
+    .topnav #myLinks {
+      display: none;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 12vh;
+      width: 20vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .active {
+      color: white;
+      height: 12vh;
+    }
+
+    #incentives-phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-break
+    {
+      width: 90%;
+      left:5%;
+      height: 5vh;
+    }
+    .inc {
+      width: 90%;
+      left: 5%;
+      height: 20vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* background-color: aqua; */
+    }
+
+    .inc-image-holder {
+      height: 100%;
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .inc-divider
+    {
+      height: 100%;
+      width: 2%;
+    }
+    .inc-image {
+      width: 90%;
+      height: 90%;
+    }
+
+    .logo {
+      height: 90%;
+      width: 20%;
+    }
+
+    #hamburger-icon {
+      transform: scale(1.4);
+      color: white;
+    }
+
+    .inc-content {
+      width: 63%;
+      height: 100%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+    #hero-phone
+{
+  height: 90vh;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly ;
+  /* background-color: aqua; */
+}
+.hero-subbox-phone
+{
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.hero-headbox-phone
+{
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+.hero-image-phone
+{
+  width: 90%;
+  height: 80%;
+}
+#hero-image-sizing-phone
+{
+  width: 100%;
+  height: 100%;
+}
+.home-button-panel
+{
+    height: 70vh;
+    background-color: red;
+    width: 45vw;
+    margin-right: 5vw;
+}
+.competition-tiles
+{
+    width: 90vw;
+    margin-left: 5vw;
+    /* background-color: aqua; */
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.competition-tiles-phone
+{
+    width: 90vw;
+    margin-left: 5vw;
+    /* background-color: aqua; */
+    /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.competition-box {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width: 35vw;
+        height: 50vh;
+        background-image: url("{% static 'Competitions box.png' %}");
+        /* background-color: red; */
+        background-repeat: no-repeat;
+        background-size: contain;
+        /* border: 1px black; */
+        }
+
+.comp-title
+{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight:500 ;
+    transform: translateX(-2vw);
+}  
+.comp-title-text
+{
+    transform: translateY(-2vh);
+}  
+.comp-img
+{
+    width: 80%;
+    height: 60%;
+    transform: translateX(-2vw);
+}
+.comp-title-btn-panel
+{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 1.2rem;
+    transform: translateX(-2vw);
+}
+.comp-title-btn
+{
+    background-image:linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+    padding: 7px 15px;
+    border-radius: 25px;
+    border: 2px solid white;
+    
+}
+.comp-title-btn-panel a
+{
+    color: azure;
+    text-decoration: none;
+}
+.comp-title-btn a
+{
+    color: azure;
+    text-decoration: none;
+}
+.mobile-container
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+    @media screen and (max-width: 900px) {
+  .navbar{
+    display: none;
+  }
+  .content
+  {
+    display: none;
+  }
+  .mobile-container
+  {
+    display: block;
+  }
+  #incentives-phone
+  {
+    display: block;
+  }
+  #hero-phone
+{
+  display: flex;
+}
+.competition-tiles
+{
+    display: none;
+}
+.competition-box
+{
+    /* background-color: red; */
+    width: 70vw;
+    background-size:cover;
+    border-radius: 25px;
+}
+/* .comp-title
+{
+    transform: translateX(+2vw);
+} */
+.comp-title-btn-panel
+{
+    transform: translateX(+1vw);
+    font-size: 1rem;
+}
+.comp-title
+{
+    font-size: 1.5rem;
+    transform: translateX(+1vw);
+    transform: translateY(+2vh);
+}
+}
+@media screen and (min-width: 901px) {
+  .navbar{
+    display: flex;
+  }
+  .content
+  {
+    display: block;
+  }
+  .mobile-container
+  {
+    display: none;
+  }
+  .competition-tiles-phone
+{
+    display: none;
+}
+  #incentives-phone
+  {
+    display: none;
+  }
+  .navbar a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        .box3 a {
+            border: 2px solid white;
+            border-radius: 25px;
+            color: azure;
+            text-decoration: none;
+            background-image: linear-gradient(to right, rgb(108, 0, 155), rgba(0,0,151,0.52));
+            padding: 7px 15px;
+            margin: 0 2rem;
+        }
+        #hero-phone
+{
+  display: none;
+}
+}
+.right-button-panel
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+    background-color: aqua;
+    height: 55vh;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Zephyr logo -->
+        <div class="left">
+            <img class="desktop-logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo">
+        </div>
+        <!-- menu buttons -->
+        <div class="right">
+          <a href="/zephyr/home">HOME</a>
+          <a href="/zephyr/about">ABOUT</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
+        </div>
+    </div>
+    <div class="competition-tiles">
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">3D PRINT OF LIQUID ROCKET ENGINE</p>
+            </div>
+            <img class="comp-img" src="{% static 'Drone illustration.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/liquid_engine"><div class="comp-title-btn">EXPLORE</div></a>
+            </div>
+        </div>
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">CAREERS IN AEROSPACE</p>
+            </div>
+            <img class="comp-img" src="{% static 'rocket.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/careers_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+            </div>
+        </div>
+    </div>
+    <div class="competition-tiles">
+      <div class="competition-box">
+          <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+          <div class="comp-title">
+              <p class="comp-title-text">SAFETY IN AEROSPACE</p>
+          </div>
+          <img class="comp-img" src="{% static 'AeroContraption ICON.jpg' %}" alt="Image 2">
+          <div class="comp-title-btn-panel">
+              <a href="/zephyr/safety_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+          </div>
+      </div>
+      <div class="competition-box">
+        <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+        <div class="comp-title">
+            <p class="comp-title-text">EMPOWERING WOMEN IN AEROSPACE</p>
+        </div>
+        <img class="comp-img" src="{% static 'AeroContraption ICON.jpg' %}" alt="Image 2">
+        <div class="comp-title-btn-panel">
+            <a href="/zephyr/women_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+        </div>
+    </div>
+  </div>
+  <div class="competition-tiles">
+    <div class="competition-box">
+        <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+        <div class="comp-title">
+            <p class="comp-title-text">ENTREPRENEURSHIP IN AEROSPACE</p>
+        </div>
+        <img class="comp-img" src="{% static 'AeroContraption ICON.jpg' %}" alt="Image 2">
+        <div class="comp-title-btn-panel">
+            <a href="/zephyr/entrepreneurship"><div class="comp-title-btn">EXPLORE</div></a>
+        </div>
+    </div>
+  </div>
+    <!-- Content -->
+    <div class="content">
+        
+        <!-- illustration -->
+            <!-- illustration -->
+            <!-- text -->
+            <div class="right">
+                <!-- Welcome text -->
+                <!-- <div class="box1">Welcome to Zephyr's</div> -->
+                <!-- CA title -->
+                <!-- <div class="box2">
+                     <p>EXPLORING NEW</p>
+                    <p>HORIZONS</p> 
+                <div class="right-button-panel">
+                <div class="right-button">
+                    EVENTS
+                </div>
+                <div class="right-button">
+                    COMPETITIONS
+                </div>
+                <div class="right-button">
+                    SYMPOSIUM
+                </div>
+            </div>
+        </div> -->
+                <!-- Register button -->
+                <!-- social media links -->
+                <div class="box4">
+                    <p>Connect with us</p>
+                    <div class="social">
+                        <a href="http://instagram.com/zephyr_iitbombay"><img class="insta" src="{% static 'Ig.png' %}" alt="Instagram"></a>
+                        <a href="http://www.facebook.com/profile.php?id=100087378432525"><img class="fb" src="{% static 'Fb.png' %}" alt="Facebook"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    <div class="mobile-container">
+
+      <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="/zephyr/home" class="active"><img class="logo" src="{% static 'LOGO.png' %}" alt="Zephyr logo"></a>
+        <div id="myLinks">
+          <a href="/zephyr/home">HOME</a>
+          <a href="/zephyr/about">ABOUT</a>
+          <a href="/zephyr/cahome">CA HOMEPAGE</a>
+          <a href="/zephyr/contact">CONTACT</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i id="hamburger-icon" class="fa fa-bars"></i>
+        </a>
+      </div>
+  
+  
+      <!-- End smartphone / tablet look -->
+    </div>
+  
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+    <!-- <div id="hero-phone">
+      <div class="hero-heading-phone">
+        <p class="hero-subbox-phone">Welcome to Zephyr's</p>
+        <p class="hero-headbox-phone">CAMPUS</p>
+        <p class="hero-headbox-phone">AMBASSADOR</p>
+        <p class="hero-headbox-phone">PROGRAM</p>
+         <p class="hero-subbox-phone">FOR CAMPUS AMBASSADORS</p> 
+      </div>
+      <div class="hero-image-phone">
+        <img id="hero-image-sizing-phone" src="{% static 'Homepage illustration.png' %}">
+      </div>
+    </div> -->
+    <!-- <div class="content" id="phone-foot">
+        <div class="box3">
+            <a href="/zephyr/register">REGISTER</a>
+        </div>
+    </div> -->
+    <div class="competition-tiles-phone">
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">3D PRINT OF LIQUID ROCKET ENGINE</p>
+            </div>
+            <img class="comp-img" src="{% static 'Drone illustration.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/liquid_engine"><div class="comp-title-btn">EXPLORE</div></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">CAREERS IN AEROSPACE</p>
+            </div>
+            <img class="comp-img" src="{% static 'rocket.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/careers_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="competition-box">
+            <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+            <div class="comp-title">
+                <p class="comp-title-text">SAFETY IN AEROSPACE</p>
+            </div>
+            <img class="comp-img" src="{% static 'rocket.png' %}" alt="Image 2">
+            <div class="comp-title-btn-panel">
+                <a href="/zephyr/safety_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="competition-box">
+          <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+          <div class="comp-title">
+              <p class="comp-title-text">EMPOWERING WOMEN IN AEROSPACE</p>
+          </div>
+          <img class="comp-img" src="{% static 'AeroContraption ICON.jpg' %}" alt="Image 2">
+          <div class="comp-title-btn-panel">
+              <a href="/zephyr/women_in_aerospace"><div class="comp-title-btn">EXPLORE</div></a>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="competition-box">
+        <!-- <img src="{% static 'Competitions box.png' %}" alt="Image 1"> -->
+        <div class="comp-title">
+            <p class="comp-title-text">ENTREPRENEURSHIP IN AEROSPACE</p>
+        </div>
+        <img class="comp-img" src="{% static 'AeroContraption ICON.jpg' %}" alt="Image 2">
+        <div class="comp-title-btn-panel">
+            <a href="/zephyr/entrepreneurship"><div class="comp-title-btn">EXPLORE</div></a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

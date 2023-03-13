@@ -46,6 +46,18 @@ def contact(request):
     return render(request,'contact.html')
 def soon(request):
     return render(request,'regsoon.html')
+def safety(request):
+    return render(request,'safety_in_aerospace.html')
+def careers(request):
+    return render(request,'careers_in_aerospace.html')
+def liquid(request):
+    return render(request,'liquid_engine_lecture.html')
+def women(request):
+    return render(request,'women.html')
+def entrepreneurship(request):
+    return render(request,'entrepreneurship.html')
+def lectures(request):
+    return render(request,'lectures.html')
 def home_view(request):
     context ={}
  
